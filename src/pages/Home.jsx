@@ -95,8 +95,13 @@ const Home = () => {
           />
         </Suspense>
       </Canvas>
-      <div className="absolute bottom-2 left-2">
-        <img src={!isPlayingMusic ? soundoff : soundon} alt="sound" className="w-10 h-10 cursor-pointer object-contain" onClick={() => setIsPlayingMusic(!isPlayingMusic)}/>
+      <div className="fixed bottom-4 left-4 z-20 bg-white/30 backdrop-blur-sm rounded-full p-2 shadow-lg">
+        <img 
+          src={!isPlayingMusic ? soundoff : soundon} 
+          alt="sound" 
+          className="w-8 h-8 sm:w-10 sm:h-10 cursor-pointer object-contain" 
+          onClick={() => setIsPlayingMusic(!isPlayingMusic)}
+        />
       </div>
     </section>
   );
