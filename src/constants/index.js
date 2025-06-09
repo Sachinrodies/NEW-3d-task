@@ -192,9 +192,9 @@ export const projects = [
 
 export const blogs = [
   {
-    name: "What is WSL ?",
+    name: "The Rise of Autonomous Dev Agents: The Future of Software Development",
     description:
-      "WSL is like a magical box that appears only when you need it, and disappears when you're done.Imagine you're using Windows but suddenly need a Linux system for a specific task — maybe you want to run Judge0, which only works in a Linux environment",
-    link: "https://medium.com/@kunal34255/what-is-wsl-ae410d3106f1",
-  },
+      "Exploring how autonomous development agents are revolutionizing software development, from automated code generation to intelligent problem-solving. Discover how these AI-powered tools are reshaping the future of programming and what it means for developers.",
+    link: "https://medium.com/@sahilrodies000/the-rise-of-autonomous-dev-agents-the-future-of-software-development-89bc2f7893fb",
+  }
 ]
