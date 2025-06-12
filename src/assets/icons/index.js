@@ -28,6 +28,7 @@ import village from "./village.jpeg";
 import weather from "./weather.jpeg";
 import catalyst from "./catalyst.jpeg";
 import restaurant from "./restaurant.jpg";
+import download from "./download.svg";
 
 export {
   css,
@@ -59,5 +60,6 @@ export {
   village,
   weather,
   catalyst,
-  restaurant
+  restaurant,
+  download
 };

@@ -6,6 +6,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import CTA from "../components/CTA";
+import { download } from "../assets/icons";
 
 const About = () => {
   return (
@@ -22,6 +23,7 @@ const About = () => {
           hands-on learning and building applications.
         </p>
       </div>
+
       <div className="mt-16 flex flex-wrap gap-12">
         {skills.map((skill) => (
           <div className="block-container w-20 h-20">
@@ -92,6 +94,23 @@ const About = () => {
               </VerticalTimelineElement>
             ))}
           </VerticalTimeline>
+        </div>
+      </div>
+
+      <div className="mt-8 p-6 bg-white rounded-xl shadow-card">
+        <div className="flex flex-col items-center gap-4">
+          <h3 className="text-xl font-semibold text-gray-800">Resume</h3>
+          <p className="text-gray-600 text-center">
+            Download my resume to learn more about my experience and skills
+          </p>
+          <a
+            href="/resume.pdf"
+            download
+            className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white rounded-lg hover:opacity-90 transition-opacity"
+          >
+            <img src={download} alt="download" className="w-5 h-5" />
+            Download Resume
+          </a>
         </div>
       </div>
 
