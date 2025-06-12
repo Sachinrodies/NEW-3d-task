@@ -40,7 +40,9 @@ const About = () => {
       </div>
 
       <div className="py-16">
-        <h3 className="subhead-text">Education</h3>
+        <h3 className="subhead-text">
+          <span className="blue-gradient_text">Academic Journey</span>
+        </h3>
         <div className="mt-5 flex flex-col gap-3 text-slate-500">
           <p>
             My educational journey has equipped me with both technical knowledge and practical skills.
