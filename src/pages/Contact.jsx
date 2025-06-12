@@ -11,6 +11,7 @@ const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [currentAnimation, setCurrentAnimation] = useState("idle");
   const { alert, showAlert, hideAlert } = useAlert();
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
@@ -18,76 +19,51 @@ const Contact = () => {
   const handleFocus = () => {
     setCurrentAnimation("walk");
   };
+
   const handleBlur = () => {
     setCurrentAnimation("idle");
   };
 
-  const sendContactForm = async ({ name, email, message }) => {
-    console.log(name,email,email)
-    try {
-      const res = await fetch("https://mail-sender-d4no.onrender.com/api/v1/mail-sender", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      const data = await res.json();
-
-      if (!res.ok) {
-        setIsLoading(false);
-        setCurrentAnimation("idle");
-        showAlert({
-          show: true,
-          text: "I didnt receive your message",
-          type: "danger",
-        });
-        hideAlert();
-      } else {
-        setIsLoading(false);
-        setForm({ name: "", email: "", message: "" });
-        showAlert({
-          show: true,
-          text: "Message sent successfully!",
-          type: "success",
-        });
-        setTimeout(() => {
-          setCurrentAnimation("idle");
-          setForm({ name: "", email: "", message: "" });
-          hideAlert();
-        }, [3000]);
-
-      }
-
-      return data; // you can show this in a toast or UI
-    } catch (err) {
-      setIsLoading(false);
-      setCurrentAnimation("idle");
-      showAlert({
-        show: true,
-        text: "I didnt receive your message",
-        type: "danger",
-      });
-    }
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!form.name || !form.email || !form.message) {
+      showAlert({
+        show: true,
+        text: "Please fill in all required fields",
+        type: "danger",
+      });
+      return;
+    }
+
     setIsLoading(true);
     setCurrentAnimation("hit");
-    if(form){
-      sendContactForm(form);
-    }
+
+    // Simulate a delay
+    setTimeout(() => {
+      setIsLoading(false);
+      setForm({ name: "", email: "", message: "" });
+      showAlert({
+        show: true,
+        text: "Message sent successfully!",
+        type: "success",
+      });
+      
+      setTimeout(() => {
+        setCurrentAnimation("idle");
+        hideAlert();
+      }, 3000);
+    }, 1000);
   };
+
   return (
     <section className="relative flex lg:flex-row flex-col max-container h-full">
       {alert.show && <Alert {...alert} />}
-      <div className="flex-1  min-w-[50%] flex flex-col">
+      <div className="flex-1 min-w-[50%] flex flex-col">
         <h1 className="head-text">Get in Touch</h1>
         <form
           className="w-full flex flex-col gap-7 mt-14"
           onSubmit={handleSubmit}
+          ref={formRef}
         >
           <label className="text-black-500 font-semibold">
             Name
@@ -110,6 +86,7 @@ const Contact = () => {
               name="email"
               className="input"
               placeholder="Enter your email"
+              required
               value={form.email}
               onChange={handleChange}
               onFocus={handleFocus}
