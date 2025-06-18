@@ -27,11 +27,11 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!form.name || !form.email || !form.message) {
-      showAlert({
-        show: true,
+        showAlert({
+          show: true,
         text: "Please fill in all required fields",
-        type: "danger",
-      });
+          type: "danger",
+        });
       return;
     }
 
@@ -40,17 +40,17 @@ const Contact = () => {
 
     // Simulate a delay
     setTimeout(() => {
-      setIsLoading(false);
-      setForm({ name: "", email: "", message: "" });
-      showAlert({
-        show: true,
-        text: "Message sent successfully!",
-        type: "success",
-      });
+        setIsLoading(false);
+        setForm({ name: "", email: "", message: "" });
+        showAlert({
+          show: true,
+          text: "Message sent successfully!",
+          type: "success",
+        });
       
-      setTimeout(() => {
-        setCurrentAnimation("idle");
-        hideAlert();
+        setTimeout(() => {
+          setCurrentAnimation("idle");
+          hideAlert();
       }, 3000);
     }, 1000);
   };

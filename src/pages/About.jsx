@@ -11,17 +11,41 @@ import { download } from "../assets/icons";
 const About = () => {
   return (
     <section className="max-container">
-      <h1 className="head-text">
-        Hello I'm{" "}
-        <span className="blue-gradient_text font-semibold drop-shadow">
-         Sachin Jha
-        </span>
-      </h1>
-      <div className="mt-5 flex flex-col gap-3 text-slate-500">
-        <p>
-          Fullstack developer based in India, specializing in MERN stack through
-          hands-on learning and building applications.
-        </p>
+      <div className="flex flex-col lg:flex-row items-center gap-8">
+        <div className="lg:w-1/3 flex justify-center">
+          <div className="relative">
+            <div className="w-64 h-64 rounded-full overflow-hidden shadow-card border-4 border-white relative z-10">
+              <img
+                src="/profile.jpg"
+                alt="Sachin Jha"
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'flex';
+                }}
+              />
+              <div className="w-full h-full bg-gradient-to-br from-[#00c6ff] to-[#0072ff] flex items-center justify-center text-white text-4xl font-bold" style={{display: 'none'}}>
+                SJ
+              </div>
+            </div>
+            <div className="absolute -inset-2 bg-gradient-to-r from-[#00c6ff] to-[#0072ff] rounded-full blur-lg opacity-30 animate-pulse"></div>
+          </div>
+        </div>
+        
+        <div className="lg:w-2/3">
+          <h1 className="head-text">
+            Hello I'm{" "}
+            <span className="blue-gradient_text font-semibold drop-shadow">
+             Sachin Jha
+            </span>
+          </h1>
+          <div className="mt-5 flex flex-col gap-3 text-slate-500">
+            <p>
+              Fullstack developer based in India, specializing in MERN stack through
+              hands-on learning and building applications.
+            </p>
+          </div>
+        </div>
       </div>
 
       <div className="mt-16 flex flex-wrap gap-12">

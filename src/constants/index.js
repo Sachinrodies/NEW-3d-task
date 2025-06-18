@@ -22,6 +22,7 @@ import {
   weather,
   catalyst,
   restaurant,
+  video,
 } from "../assets/icons";
 
 export const skills = [
@@ -156,6 +157,14 @@ export const socialLinks = [
 ];
 
 export const projects = [
+  {
+    iconUrl: video,
+    theme: "btn-back-purple",
+    name: "Clipart Short Video Generator",
+    description:
+      "An AI-powered video generation platform that creates engaging short videos from text prompts. Features include real-time video generation, customizable templates, and seamless dashboard for managing video projects.",
+    link: "https://clipart-short-video-gen-ov2n.vercel.app/dashboard",
+  },
   {
     iconUrl: catalyst,
     theme: "btn-back-blue",

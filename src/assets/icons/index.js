@@ -29,6 +29,7 @@ import weather from "./weather.jpeg";
 import catalyst from "./catalyst.jpeg";
 import restaurant from "./restaurant.jpg";
 import download from "./download.svg";
+import video from "./video.svg";
 
 export {
   css,
@@ -61,5 +62,6 @@ export {
   weather,
   catalyst,
   restaurant,
-  download
+  download,
+  video
 };
