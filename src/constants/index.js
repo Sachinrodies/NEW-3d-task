@@ -23,6 +23,7 @@ import {
   catalyst,
   restaurant,
   video,
+  converso,
 } from "../assets/icons";
 
 export const skills = [
@@ -157,6 +158,14 @@ export const socialLinks = [
 ];
 
 export const projects = [
+  {
+    iconUrl: converso,
+    theme: "btn-back-teal",
+    name: "Converso",
+    description:
+      "A modern SaaS application built with Next.js, TypeScript, and Clerk authentication. Features include user authentication, dashboard, and modern UI design with responsive layout and real-time functionality.",
+    link: "https://saas-app-plum.vercel.app",
+  },
   {
     iconUrl: video,
     theme: "btn-back-purple",

@@ -30,6 +30,7 @@ import catalyst from "./catalyst.jpeg";
 import restaurant from "./restaurant.jpg";
 import download from "./download.svg";
 import video from "./video.svg";
+import converso from "./converso.svg";
 
 export {
   css,
@@ -63,5 +64,6 @@ export {
   catalyst,
   restaurant,
   download,
-  video
+  video,
+  converso
 };
